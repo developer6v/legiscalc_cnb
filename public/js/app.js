@@ -43,6 +43,13 @@ jQuery(document).ready(function($){
     });
 
 
+     $(document).on('click', '#closeModalBtn', async function(event) {
+        event.preventDefault();
+        $('#divResultCalc').css("display", "none").hide();
+        $('.overlay').hide();     
+    });
+
+
 
     // função para calcular as taxas que tem input valor
     async function taxesCalculatorWithValue(service) {
