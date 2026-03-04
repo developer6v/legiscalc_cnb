@@ -46,12 +46,21 @@ function calculadoraImoveis() {
                         <i class='fa-solid fa-calculator'></i> Calcular Custos
                     </button>
                 </form>
-            </div>
-        </div>";
-        $output .= get_footer_cards() ;
-        $output .= resultadoCalculadora(); 
+            </div>"; // Fim da formCalcDiv
+            
+            // O FOOTER AGORA ENTRA AQUI! (Dentro da calcDiv)
+            $output .= get_footer_cards();
+            // Adicionamos um clear para o float: right do seu CSS antigo não bugar a caixa branca
+            $output .= "<div style='clear: both;'></div>"; 
+            
         $output .= "
-    </div>";
+        </div>"; // Fim da calcDiv (caixa branca)
+        
+        // O POPUP FICA DE FORA
+        $output .= resultadoCalculadora(); 
+        
+    $output .= "
+    </div>"; // Fim da calcDivFlex
         
     return $output;
 }
