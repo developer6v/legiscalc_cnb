@@ -1,0 +1,94 @@
+.userNameDivDivorcio, .userWhatsappDivorcio{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.addInputValueDivorcio {
+    color: #3652AD!important;
+    text-decoration: underline;
+}
+
+.userNameDivDivorcio i, .userWhatsappDivorcio i {
+    margin-right: 10px; 
+    color: #aaa;   
+}
+
+.buttonCalcDivorcio:active {
+    transform: scale(1.0); 
+}
+
+.buttonCalcDivorcio:hover {
+    transform: scale(0.98); 
+    background-color: #3652AD;
+}
+
+.buttonCalcDivorcio, .buttonCalcDivorcio:focus {
+    font-size: 15px;
+    margin-top: 20px;
+    background-color: #3652AD;
+    color: rgb(255, 255, 255);
+    --rippleLayerColor: rgba(255, 255, 255, 0.2);
+    height: 3rem;
+    display: flex;
+    width: fit-content;
+    margin-bottom:  1rem;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+    outline: 0px;
+    -webkit-box-align: center;
+    align-items: center;
+    vertical-align: baseline;
+    overflow: hidden;
+    position: relative;
+    border: 0px;
+    transform: translate3d(0px, 0px, 0px);
+    border-radius: 12px 12px 12px 12px;
+    padding: 9px 9px 9px 9px;
+}
+
+.addInputValueDivorcio {
+    cursor: pointer;
+    color: #3652AD;
+}
+
+.valuesDivorcioDiv {
+    margin-top: 20px;
+    padding: 5px;
+    display: none;
+}
+
+.valueDivorcioDiv p {
+    font-size: 11px;
+    display: block;
+    line-height: 1.2;
+}
+
+.lineValueDivorcio label {
+    font-size: 11px;
+    display: inline-block;
+    line-height: 1.2;
+    vertical-align: baseline;
+}
+
+.lineValueDivorcio p {
+    color: black;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.lineValueDivorcio i {
+    display: inline-block;
+}
+
+.lineValueDivorcio input {
+    vertical-align: baseline;
+    display: inline-block;
+    font-size: 11px;
+    width: 100px!important;
+    border: none !important;
+    border-bottom: 1px solid #333!important;
+    padding: 0px !important;
+    margin-left: 5px;
+}

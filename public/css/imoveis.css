@@ -1,0 +1,115 @@
+.userNameDivImovel, .userWhatsappImovel, .valueImovel{
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 5px;
+}
+
+.valueImoveis {
+    margin-top: 20px;
+    display: inline-block;
+    width: 49%;
+}
+
+.valueImoveis p {
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.lineValue label {
+    font-size: 11px;
+    display: inline-block;
+    line-height: 1.2;
+    vertical-align: baseline;
+}
+
+.lineValue i {
+    display: inline-block;
+}
+
+.lineValue input {
+    vertical-align: baseline;
+    display: inline-block;
+    font-size: 11px;
+    width: 100px!important;
+    border: none !important;
+    border-bottom: 1px solid #333!important;
+    padding: 0px !important;
+    margin-left: 5px;
+}
+
+.userNameDivImovel i, .userWhatsappImovel i {
+    margin-right: 10px; 
+    color: #aaa;  
+}
+
+
+.buttonCalcImovel:active {
+    transform: scale(1.0); 
+}
+
+.buttonCalcImovel:hover {
+    transform: scale(0.98); 
+    background-color: #3652AD;
+}
+.buttonCalcImovel, .buttonCalcImovel:focus {
+    font-size: 15px;
+    border-radius: 12px 12px 12px 12px;
+    padding: 9px 9px 9px 9px;
+    margin-top: 20px;
+    background-color: #3652AD;
+    color: rgb(255, 255, 255);
+    --rippleLayerColor: rgba(255, 255, 255, 0.2);
+    height: 3rem;
+    display: flex;
+    width: fit-content;
+    margin-bottom: 1rem;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+    outline: 0px;
+    -webkit-box-align: center;
+    align-items: center;
+    vertical-align: baseline;
+    overflow: hidden;
+    position: relative;
+    border: 0px;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.addInputValueImoveis {
+    cursor: pointer;
+    color: #3652AD;
+}
+
+
+.itbi_value_div {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 250px;
+}
+
+#itbi_value {
+    color: #3652AD;
+}
+
+#itbi_value, .itbi_value_title {
+    font-size: 16px;
+    width: 100px;
+    display: inline-block;
+    line-height: 0;
+}
+
+.description_itbi {
+    margin-bottom: 10px;
+    font-size: 9px;
+    max-width: 250px;
+}
+
+.itbi_value_div {
+    line-height: 0;
+}

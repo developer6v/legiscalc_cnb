@@ -1,0 +1,259 @@
+.calcDivHeaderHome span {
+    color: #3652AD !important;
+    font-size: 24px !important;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+.calcDivHeaderHome p {
+    color: #3652AD !important;
+    font-size: 18px !important;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.icon-home {
+    color: #3652AD !important;
+}
+
+.userNameDivHome, .userWhatsappHome, .valueHome{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.userNameDivHome i, .userWhatsappHome i, .valueHome i {
+    margin-right: 10px; 
+    color: #aaa;  
+}
+.complete-simulation a {
+    color: #3652AD;
+    font-size: 12px;
+    float: right;
+    text-decoration: underline !important;
+}
+
+.complete-simulation  {
+    float: right;
+    margin-left: 30px;
+}
+.container-footer-panhacao {
+    display: flex;
+    align-items: center; 
+    height: fit-content;
+    justify-content: space-between;
+}
+.inputFormLegisCalc, .inputValue {
+    font-size: 10px;
+    background-color: transparent !important;
+    border-width: 0px 0px 1px!important;
+    border-top-style: initial!important;
+    border-right-style: initial!important;
+    border-left-style: initial!important;
+    border-top-color: initial!important;
+    border-right-color: initial!important;
+    border-left-color: initial!important;
+    border-image: initial!important;
+    border-radius: 0px!important;
+    box-sizing: border-box!important;
+    color: rgb(17, 17, 17)!important;
+    caret-color: currentcolor!important;
+    display: block!important;
+    margin: 0px!important;
+    padding: 4px 0px!important;
+    text-align: left!important;
+    outline: none!important;
+    width: 100%!important;
+    border-bottom-style: solid!important;
+    border-bottom-color: rgba(17, 17, 17, 0.2)!important;
+    --inputCurrentColor: #111111!important;
+    white-space: nowrap!important;
+    overflow: hidden!important;
+    text-overflow: ellipsis!important;
+}
+
+.placeholderValueCalc {
+    color: #666;
+    font-size: 12px;
+    display: inline-block;
+    margin-right: 5px;
+}
+.valueInfo_legisCalc {
+    display: none;
+    padding: 5px;
+}
+.userName_legisCalc, .value_legisCalc, .service_legisCalc, .whatsApp_legisCalc, .value_legisCalc {
+    font-size: 10px;
+}
+.taxTag {
+    font-weight: 900;
+    font-size: 13px;
+}
+
+#userName_input {
+    text-transform: capitalize;
+}
+.inputFormLegisCalcHome {
+    display: block;
+}
+
+.headerDivValue {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.headerDivValue p{
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.buttonCalcHome:active {
+    transform: scale(1.0); 
+}
+
+.buttonCalcHome:hover {
+    transform: scale(0.98); 
+    background-color: #3652AD;
+}
+.buttonCalcHome, .buttonCalcHome:focus{
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 12px 12px 12px 12px;
+    padding: 0px 30px 0px 30px;
+    margin-top: 20px;
+    background-color: #3652AD;
+    color: rgb(255, 255, 255);
+    --rippleLayerColor: rgba(255, 255, 255, 0.2);
+    height: 3rem;
+    display: flex;
+    width: fit-content;
+    margin-bottom: 1rem;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+    outline: 0px;
+    -webkit-box-align: center;
+    align-items: center;
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative;
+    border: 0px;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+
+.userNameDiv, .userWhatsapp, .servicesInfo_legisCalc{
+    display: block;
+}
+/*
+.userNameDiv label, .userWhatsapp label, .servicesInfo_legisCalc label{
+    color: #3652AD;
+}
+*/
+
+
+
+
+
+.divTable {
+    background-color: white;
+    margin-top: 30px;
+    width: 800px;
+}
+
+
+
+
+
+
+
+
+
+.tableLegisCalc {
+    width: 800px;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+}
+
+.headersTable th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+.dataTable th {
+    background-color: white;
+    color: #4CAF50;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Estilos para as células de dados */
+.headersTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Cor de fundo semi-transparente para o efeito de escurecimento */
+    z-index: 999;
+    display: none;
+}
+
+#divResultCalc {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: white; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+    z-index: 1000;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 1rem;
+}
+
+.titleResult, .titleResultTotal, .answerResultTotal, .answerResult {
+    width: 100px;
+    display: inline-block;
+    line-height: 1.2;
+
+}
+
+.totalDiv {
+    margin-top: 10px;
+}
+.titleResultTotal, .answerResultTotal {
+    font-weight: 900;
+    font-size: 16px;
+}
+
+.warningsDiv {
+    margin-top: 30px;
+}
+
+.warningsDiv p {
+    font-size: 10px;
+    display: block;
+    line-height: 0;
+}
+
+.actualResultDiv {
+    padding: 20px;
+    width: fit-content;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
