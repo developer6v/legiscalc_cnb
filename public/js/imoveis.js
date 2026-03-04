@@ -1,28 +1,30 @@
 jQuery(document).ready(function($){
     $(document).on('click', '.addInputValueImoveis', function(event){
-        var singleValue =  $(this).parent().find('.valueImovel').val();
-        if (singleValue == '') {
+        var singleValue =  $(this).parent().find('input').val();
+        if (singleValue == '' || singleValue == '0,00') {
             alert('O valor não pode estar vazio!');
             return;
         }
-        // Esconde o elemento que foi clicado
-       $(this).hide();
-        var quantidadeValores = $('.valueImovel').length + 1;
-        var divToAppend = "<div class='valueImoveis'>" +
-            "<div class='lineValue'>" +
-                "<label>Valor do imóvel " + quantidadeValores + "</label>" +
-                "<input class='valueImovel valuesInputImoveis' type='text' value = '0,00' data-type='imovel'> " +
-                "<i class='addInputValueImoveis fa-solid fa-circle-plus'></i>" +
-            "</div>" +
-        "</div>" + 
-        "<div class='valueImoveis'>" +
-            "<div class='lineValue'>" +
-                "<label>Valor da garagem " + quantidadeValores + "</label>" +
-                "<input class='valueGaragem valuesInputImoveis' type='text' value = '0,00' data-type='garagem'>" +
-                "<i class='addInputValueImoveis fa-solid fa-circle-plus'></i>" +
-            "</div>" +
+        
+        // Esconde o botão '+' que foi clicado
+        $(this).hide();
+        
+        // Cria a nova estrutura HTML baseada no design moderno
+        var divImovel = "<div class='form-group value-item-row'>" +
+            "<span class='currency-symbol'>R$</span>" +
+            "<input class='valueImovel valuesInputImoveis' type='text' value='0,00' data-type='imovel'> " +
+            "<i class='addInputValueImoveis fa-solid fa-circle-plus action-icon'></i>" +
         "</div>";
-        $('.valuesDiv').append(divToAppend);
+
+        var divGaragem = "<div class='form-group value-item-row'>" +
+            "<span class='currency-symbol'>R$</span>" +
+            "<input class='valueGaragem valuesInputImoveis' type='text' value='0,00' data-type='garagem'> " +
+            "<i class='addInputValueImoveis fa-solid fa-circle-plus action-icon'></i>" +
+        "</div>";
+
+        // Adiciona os campos nas suas respectivas colunas
+        $('#coluna-imoveis').append(divImovel);
+        $('#coluna-garagens').append(divGaragem);
     });
 
 

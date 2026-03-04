@@ -1,89 +1,59 @@
-.userNameDivImovel, .userWhatsappImovel, .valueImovel{
-    display: flex;
-    align-items: center;
-    border: none;
-    padding: 5px;
+/* Layout em 2 colunas para desktop e 1 para celular */
+.grid-imoveis-garagens {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
-.valueImoveis {
-    margin-top: 20px;
-    display: inline-block;
-    width: 49%;
+@media (max-width: 600px) {
+    .grid-imoveis-garagens {
+        grid-template-columns: 1fr; /* No celular fica um embaixo do outro */
+        gap: 15px;
+    }
 }
 
-.valueImoveis p {
-    font-size: 12px;
-    line-height: 1.2;
-    font-weight: bold;
+.column-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 10px;
 }
 
-.lineValue label {
-    font-size: 11px;
-    display: inline-block;
-    line-height: 1.2;
-    vertical-align: baseline;
+/* Usando o seu novo vermelho do app.css */
+.column-title i {
+    color: #d6281c; 
+    margin-right: 5px;
 }
 
-.lineValue i {
-    display: inline-block;
+.value-item-row {
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.lineValue input {
-    vertical-align: baseline;
-    display: inline-block;
-    font-size: 11px;
-    width: 100px!important;
-    border: none !important;
-    border-bottom: 1px solid #333!important;
-    padding: 0px !important;
-    margin-left: 5px;
+.currency-symbol {
+    font-size: 14px;
+    color: #718096;
+    margin-right: 8px;
+    font-weight: 600;
 }
 
-.userNameDivImovel i, .userWhatsappImovel i {
-    margin-right: 10px; 
-    color: #aaa;  
-}
-
-
-.buttonCalcImovel:active {
-    transform: scale(1.0); 
-}
-
-.buttonCalcImovel:hover {
-    transform: scale(0.98); 
-    background-color: #ed3124!important;
-}
-.buttonCalcImovel, .buttonCalcImovel:focus {
-    font-size: 15px;
-    border-radius: 12px 12px 12px 12px!important;
-    padding: 9px 9px 9px 9px;
-    margin-top: 20px;
-    background-color: #ed3124!important;
-    color: rgb(255, 255, 255)!important;
-    --rippleLayerColor: rgba(255, 255, 255, 0.2);
-    height: 3rem;
-    display: flex;
-    width: fit-content;
-    margin-bottom: 1rem;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
+.action-icon {
+    font-size: 20px !important;
+    color: #d6281c !important; /* Vermelho padrão da sua marca */
     cursor: pointer;
-    outline: 0px;
-    -webkit-box-align: center;
-    align-items: center;
-    vertical-align: baseline;
-    overflow: hidden;
-    position: relative;
-    border: 0px;
-    transform: translate3d(0px, 0px, 0px);
+    margin-right: 0 !important;
+    transition: transform 0.2s;
 }
 
-.addInputValueImoveis {
-    cursor: pointer;
-    color: #3652AD;
+.action-icon:hover {
+    transform: scale(1.1);
 }
 
-
+/* Estilos do ITBI */
 .itbi_value_div {
     padding: 10px;
     border-radius: 5px;
@@ -91,10 +61,11 @@
     margin-top: 10px;
     margin-bottom: 10px;
     max-width: 250px;
+    line-height: 0;
 }
 
 #itbi_value {
-    color: #3652AD;
+    color: #d6281c;
 }
 
 #itbi_value, .itbi_value_title {
@@ -108,8 +79,4 @@
     margin-bottom: 10px;
     font-size: 9px;
     max-width: 250px;
-}
-
-.itbi_value_div {
-    line-height: 0;
 }
