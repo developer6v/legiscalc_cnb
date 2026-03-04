@@ -51,15 +51,15 @@
 
 .buttonCalcImovel:hover {
     transform: scale(0.98); 
-    background-color: #3652AD;
+    background-color: #ed3124!important;
 }
 .buttonCalcImovel, .buttonCalcImovel:focus {
     font-size: 15px;
-    border-radius: 12px 12px 12px 12px;
+    border-radius: 12px 12px 12px 12px!important;
     padding: 9px 9px 9px 9px;
     margin-top: 20px;
-    background-color: #3652AD;
-    color: rgb(255, 255, 255);
+    background-color: #ed3124!important;
+    color: rgb(255, 255, 255)!important;
     --rippleLayerColor: rgba(255, 255, 255, 0.2);
     height: 3rem;
     display: flex;

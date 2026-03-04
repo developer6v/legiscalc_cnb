@@ -1,36 +1,36 @@
 
 
 .buttonCalcAtos:active {
-    transform: scale(1.0); 
+    transform: scale(1.0)!important; 
 }
 
 .buttonCalcAtos:hover {
-    transform: scale(0.98); 
-    background-color: #3652AD;
+    transform: scale(0.98)!important; 
+    background-color: #c0251a!important;
 }
 .buttonCalcAtos, .buttonCalcAtos:focus{
-    font-size: 15px;
-    margin-top: 20px;
-    background-color: #3652AD;
+    font-size: 15px!important;
+    margin-top: 20px!important;
+    background-color: #ed3124!important;
     color: rgb(255, 255, 255);
-    --rippleLayerColor: rgba(255, 255, 255, 0.2);
-    height: 3rem;
-    display: flex;
-    width: fit-content;
-    margin-bottom: 1rem;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    cursor: pointer;
-    outline: 0px;
-    -webkit-box-align: center;
-    align-items: center;
-    vertical-align: middle;
-    overflow: hidden;
-    position: relative;
-    border: 0px;
-    transform: translate3d(0px, 0px, 0px);
-    border-radius: 12px 12px 12px 12px;
-    padding: 9px 9px 9px 9px;
+    --rippleLayerColor: rgba(255, 255, 255, 0.2)!important;
+    height: 3rem!important;
+    display: flex!important;
+    width: fit-content!important;
+    margin-bottom: 1rem!important;
+    -webkit-box-pack: justify!important;
+    justify-content: space-between!important;
+    cursor: pointer!important;
+    outline: 0px!important;
+    -webkit-box-align: center!important;
+    align-items: center!important;
+    vertical-align: middle!important;
+    overflow: hidden!important;
+    position: relative!important;
+    border: 0px!important;
+    transform: translate3d(0px, 0px, 0px)!important;
+    border-radius: 12px 12px 12px 12px!important;
+    padding: 9px 9px 9px 9px!important;
 }
 
 .userNameDiv, .userWhatsapp{

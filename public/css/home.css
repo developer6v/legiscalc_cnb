@@ -115,7 +115,7 @@
 
 .buttonCalcHome:hover {
     transform: scale(0.98); 
-    background-color: #3652AD;
+    background-color: #ed3124!important;
 }
 .buttonCalcHome, .buttonCalcHome:focus{
     font-size: 17px;
