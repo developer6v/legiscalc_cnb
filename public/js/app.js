@@ -132,7 +132,7 @@ jQuery(document).ready(function($){
         $('#divResultCalc').hide();
         $('.overlay').hide();
     });
-    $('.overlay').click(function(event) {
+    $(document).on('click', '.overlay', function(event) {
         $('#divResultCalc').hide();
         $('.overlay').hide();
     }) 
