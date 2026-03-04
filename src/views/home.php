@@ -27,7 +27,7 @@ function calculadoraHome() {
                         <input type='text' placeholder='Valor do imóvel' class='valueCalc inputValue'/>
                     </div>
                     <div class='container-footer-panhacao'>
-                        <button  data-service='Transferência de Imóveis (Home)' class='buttonCalcHome buttonCalcForEmail'>
+                        <button type='button' data-service='Transferência de Imóveis (Home)' class='buttonCalcHome buttonCalcForEmail'>
                             <span>Calcular</span>
                         </button>
                         <div class='complete-simulation'>

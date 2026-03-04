@@ -22,7 +22,7 @@
 
 /* Cabeçalhos Globais */
 .calcDivHeader span {
-    color: #3652AD;
+    color: #ed3124;
     font-size: 22px;
     font-weight: 800;
     display: block;
@@ -45,7 +45,7 @@
 }
 
 .form-group:focus-within {
-    border-color: #3652AD;
+    border-color: #c72519;
     box-shadow: 0 0 0 3px rgba(54, 82, 173, 0.15); /* Efeito de foco Apple-like */
     background-color: #ffffff;
 }
@@ -76,7 +76,7 @@
    ========================================= */
 .btn-primary-legis {
     width: 100%;
-    background-color: #3652AD;
+    background-color: #d6281c;
     color: #ffffff;
     font-size: 16px;
     font-weight: 600;
@@ -93,9 +93,9 @@
 }
 
 .btn-primary-legis:hover {
-    background-color: #2a4187;
+    background-color: #7e1911;
     transform: translateY(-2px); /* Efeito de levitar */
-    box-shadow: 0 5px 15px rgba(54, 82, 173, 0.3);
+    box-shadow: 0 5px 15px rgba(207, 44, 44, 0.3);
 }
 
 .btn-primary-legis:active {

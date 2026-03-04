@@ -54,7 +54,7 @@ function calculadoraAtosSelect($tipoSelecionado = 'procuracao') {
                             }
                        $output .= " </select> 
                     </div>
-                    <button  data-service='${nameService}' class='buttonCalcAtosProcuracao buttonCalcForEmail'>
+                    <button type='button' data-service='${nameService}' class='buttonCalcAtosProcuracao buttonCalcForEmail'>
                         <span>Calcular</span>
                     </button>
                 </form>
