@@ -118,13 +118,13 @@
     background-color: #ed3124!important;
 }
 .buttonCalcHome, .buttonCalcHome:focus{
-    font-size: 17px;
-    font-weight: 600;
-    border-radius: 12px 12px 12px 12px;
-    padding: 0px 30px 0px 30px;
-    margin-top: 20px;
-    background-color: #3652AD;
-    color: rgb(255, 255, 255);
+    font-size: 17px!important;
+    font-weight: 600!important;
+    border-radius: 12px 12px 12px 12px!important;
+    padding: 0px 30px 0px 30px!important;
+    margin-top: 20px!important;
+    background-color: #ed3124!important;
+    color: rgb(255, 255, 255)!important;
     --rippleLayerColor: rgba(255, 255, 255, 0.2);
     height: 3rem;
     display: flex;
