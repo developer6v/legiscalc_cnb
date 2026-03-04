@@ -5,18 +5,20 @@ require_once ROOT_PATH_DIR . "src/components/resultadoCalculadora.php";
 require_once ROOT_PATH_DIR . "src/components/footer_cards.php";
 
 
-function calculadoraAtosSelect() {
+function calculadoraAtosSelect($tipoSelecionado = 'procuracao') {
     $servicesGeneral = atosCalculator();
-    $requestUri = $_SERVER['REQUEST_URI'];
-    $requestUri = rtrim($requestUri, '/');
-    $parametroUrl = basename($requestUri);
 
-    if ($parametroUrl == 'procuracao') {
+    // A mágica acontece aqui: usamos a variável que veio do shortcode
+    if ($tipoSelecionado == 'procuracao') {
         $services = $servicesGeneral['procuracao-collection'];
         $nameService = "Procuração";
-    } elseif ($parametroUrl == 'testamento') {
+    } elseif ($tipoSelecionado == 'testamento') {
         $services = $servicesGeneral['testamento-collection'];
         $nameService = "Testamento";
+    } else {
+        // Fallback de segurança
+        $services = [];
+        $nameService = "Serviço Indisponível";
     }
 
     $output = "

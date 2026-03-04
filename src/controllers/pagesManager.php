@@ -7,7 +7,7 @@ require_once ROOT_PATH_DIR . "src/views/inventario.php";
 require_once ROOT_PATH_DIR . "src/views/atos_select.php";
 
 class pagesManager  {
-    function outputPage ($page) {
+    function outputPage ($page, $parametro = null) {
         switch ($page) {
             case "home":
                 return calculadoraHome();
@@ -20,11 +20,11 @@ class pagesManager  {
             case "inventario":
                 return calculadoraInventario();
             case "atosSelect":
-                return calculadoraAtosSelect();
+                // Repassando o parâmetro para a calculadora
+                return calculadoraAtosSelect($parametro);
             default:
                 return calculadoraHome();
         }
     }
 }
-
 ?>

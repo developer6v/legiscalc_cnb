@@ -29,11 +29,17 @@ class PluginManager {
         return ob_get_clean();
     }
 
-    public function atosSelectPage() {
+    public function atosSelectPage($atts) {
+        // Define 'procuracao' como padrão caso você esqueça de colocar o atributo
+        $parametros = shortcode_atts(array(
+            'tipo' => 'procuracao', 
+        ), $atts);
+
         ob_start();
         $page = 'atosSelect';
         $legisCalc = new pagesManager();
-        echo $legisCalc->outputPage($page);
+        // Agora passamos o tipo para o roteador
+        echo $legisCalc->outputPage($page, $parametros['tipo']);
         return ob_get_clean();
     }
 
