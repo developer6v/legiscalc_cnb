@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
     // gerencia o calculo das taxas
-    $('.buttonCalcAtos').click(async function(event){
+    $(document).on('click', '.buttonCalcAtos', async function(event) {
         event.preventDefault();
         $('#divResultCalc').hide();
         $('.overlay').hide();
