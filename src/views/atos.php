@@ -39,7 +39,7 @@ function calculadoraAtos($tipoSelecionado = 'apostilamento-de-haia') {
                         ' data-issqn="' . $service['ISSQN'] . '"' .
                         ' data-total="' . $service['Total'] . '">';
                     $output .= " </div> 
-                    <button type='button' data-service='${nameService}' class='buttonCalcAtos buttonCalcForEmail'>
+                    <button  data-service='${nameService}' class='buttonCalcAtos buttonCalcForEmail'>
                         <span>Calcular</span>
                     </button>
                 </form>

@@ -6,7 +6,7 @@ function resultadoCalculadora() {
             
             <div class='result-header'>
                 <h2><i class='fa-solid fa-file-invoice-dollar'></i> Resumo da Simulação</h2>
-                <button type='button' class='close-modal' id='closeModalBtn'><i class='fa-solid fa-xmark'></i></button>
+                <button  class='close-modal' id='closeModalBtn'><i class='fa-solid fa-xmark'></i></button>
             </div>   
             
             <div class='actualResultDiv'>
