@@ -21,11 +21,17 @@ class PluginManager {
         return ob_get_clean();
     }
 
-    public function atosTabeliaoPage() {
+    public function atosTabeliaoPage($atts) {
+        // Define 'apostilamento-de-haia' como padrão por segurança
+        $parametros = shortcode_atts(array(
+            'tipo' => 'apostilamento-de-haia', 
+        ), $atts);
+
         ob_start();
         $page = 'atos';
         $legisCalc = new pagesManager();
-        echo $legisCalc->outputPage($page);
+        // Repassa o tipo para o roteador
+        echo $legisCalc->outputPage($page, $parametros['tipo']);
         return ob_get_clean();
     }
 

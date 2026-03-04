@@ -4,17 +4,15 @@ require_once ROOT_PATH_DIR . "src/services/atosCalculator.php";
 require_once ROOT_PATH_DIR . "src/components/resultadoCalculadora.php";
 require_once ROOT_PATH_DIR . "src/components/footer_cards.php";
 
-function calculadoraAtos() {
+function calculadoraAtos($tipoSelecionado = 'apostilamento-de-haia') {
     $services = atosCalculator();
-    $requestUri = $_SERVER['REQUEST_URI'];
-    $requestUri = rtrim($requestUri, '/');
-    $parametroUrl = basename($requestUri);
 
-    if (isset($services[$parametroUrl])) {
-        $service = $services[$parametroUrl];
+    if (isset($services[$tipoSelecionado])) {
+        $service = $services[$tipoSelecionado];
     } else {
-        return "Ato não encontrado!";
+        return "<p style='color:red;'>Ato não encontrado! Verifique o nome do serviço no shortcode.</p>";
     }
+    
     $nameService = $service['Name'];
     $output = "
     <div class='calcDivFlex'>

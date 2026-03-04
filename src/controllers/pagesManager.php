@@ -14,7 +14,7 @@ class pagesManager  {
             case "imoveis":
                 return calculadoraImoveis();
             case "atos":
-                return calculadoraAtos();
+                return calculadoraAtos($parametro);
             case "divorcio":
                 return calculadoraDivorcio();
             case "inventario":
