@@ -1,86 +1,103 @@
+/* =========================================
+   ESTILOS GLOBAIS DA CALCULADORA
+   ========================================= */
+
 .calcDivFlex {
+    display: flex;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
-    justify-content: center;
-}
-
-.notice {
-    display: none;
-}
-
-.answerResultTotal, .answerResult{
-    color: #3652AD;
 }
 
 .calcDiv {
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08); /* Sombra moderna e suave */
+    padding: 30px;
     width: 100%;
-    height: fit-content;
-    display: block;
-    margin-top:20px;
+    max-width: 600px; /* Limita o tamanho em telas gigantes */
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, sans-serif;
 }
 
-.calcDivHeader p {
-    font-size: 12px;
-    display: block;
-}
-
+/* Cabeçalhos Globais */
 .calcDivHeader span {
-    font-size: 17px;
+    color: #3652AD;
+    font-size: 22px;
+    font-weight: 800;
     display: block;
-    font-weight: bold;
-    margin-bottom: 12px; 
+    margin-bottom: 20px;
+    line-height: 1.3;
 }
 
-.calcDivHeader {
-    display: block;
-    height: fit-content;
-    margin-bottom: 10px;
+/* =========================================
+   INPUTS MODERNOS (Padrão para todas as telas)
+   ========================================= */
+.form-group {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa; /* Fundo cinza bem claro */
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
 }
 
-#services_LegisCalc {
-    margin-top: 20px;
+.form-group:focus-within {
+    border-color: #3652AD;
+    box-shadow: 0 0 0 3px rgba(54, 82, 173, 0.15); /* Efeito de foco Apple-like */
+    background-color: #ffffff;
 }
 
-.formCalcDiv label {
-    display: block;
-    margin-top: 10px!important;
+.form-group i {
+    color: #a0aec0;
+    font-size: 16px;
+    margin-right: 12px;
 }
 
-
-.formCalcDiv {
-    display: inline-block;
+.inputFormLegisCalc, .valueCalc, .valuesInputImoveis {
+    flex: 1;
+    border: none !important;
+    background: transparent !important;
+    padding: 14px 0 !important;
+    font-size: 16px !important; /* EVITA ZOOM NO IPHONE */
+    color: #2d3748 !important;
+    outline: none !important;
     width: 100%;
-} 
-
-.inputFormLegisCalc {
-    background-color: transparent !important;
-    border-width: 0px 0px 1px!important;
-    border-top-style: initial!important;
-    border-right-style: initial!important;
-    border-left-style: initial!important;
-    border-top-color: initial!important;
-    border-right-color: initial!important;
-    border-left-color: initial!important;
-    border-image: initial!important;
-    border-radius: 0px!important;
-    box-sizing: border-box!important;
-    color: rgb(17, 17, 17)!important;
-    caret-color: currentcolor!important;
-    display: block!important;
-    margin: 0px!important;
-    padding: 8px 0px!important;
-    text-align: left!important;
-    outline: none!important;
-    width: 100%!important;
-    border-bottom-style: solid!important;
-    border-bottom-color: rgba(17, 17, 17, 0.2)!important;
-    --inputCurrentColor: #111111!important;
-    white-space: nowrap!important;
-    overflow: hidden!important;
-    text-overflow: ellipsis!important;
 }
 
+.inputFormLegisCalc::placeholder {
+    color: #a0aec0;
+}
+
+/* =========================================
+   BOTÕES GLOBAIS
+   ========================================= */
+.btn-primary-legis {
+    width: 100%;
+    background-color: #3652AD;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-primary-legis:hover {
+    background-color: #2a4187;
+    transform: translateY(-2px); /* Efeito de levitar */
+    box-shadow: 0 5px 15px rgba(54, 82, 173, 0.3);
+}
+
+.btn-primary-legis:active {
+    transform: translateY(0);
+}
