@@ -49,7 +49,7 @@ jQuery(document).ready(function($){
 
 
 
-    $('.buttonCalcImovel').click(async function(event) {
+    $(document).on('click', '.buttonCalcImovel', async function(event) {
         event.preventDefault(); 
     
 

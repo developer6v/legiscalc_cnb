@@ -21,7 +21,7 @@ jQuery(document).ready(function($){
 
 
 
-    $('.buttonCalcDivorcio').click(async function(event) {
+    $(document).on('click', '.buttonCalcDivorcio', async function(event) {
         event.preventDefault(); 
 
 

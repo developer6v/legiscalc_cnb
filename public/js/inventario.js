@@ -21,7 +21,7 @@ jQuery(document).ready(function($){
 
 
 
-    $('.buttonCalcInventario').click(async function(event) {
+    $(document).on('click', '.buttonCalcInventario', async function(event) {
         event.preventDefault(); 
 
 

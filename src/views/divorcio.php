@@ -41,7 +41,7 @@ function calculadoraDivorcio() {
                             </div>    
                         </div>
                     </div>
-                    <button data-service='Divisão de Bens' class='buttonCalcDivorcio buttonCalcForEmail'>
+                    <button type='button' data-service='Divisão de Bens' class='buttonCalcDivorcio buttonCalcForEmail'>
                         <span>Calcular</span>
                     </button>
                 </form>

@@ -42,7 +42,7 @@ function calculadoraInventario() {
                             </div>    
                         </div>
                     </div>
-                    <button data-service='Divisão de Bens' class='buttonCalcInventario buttonCalcForEmail'>
+                    <button type='button' data-service='Divisão de Bens' class='buttonCalcInventario buttonCalcForEmail'>
                         <span>Calcular</span>
                     </button>
                 </form>

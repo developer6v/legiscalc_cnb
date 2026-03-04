@@ -39,7 +39,7 @@ function calculadoraImoveis() {
                             </div>
                         </div>
                     </div>
-                    <button data-service='Transferência de Imóveis' class='buttonCalcImovel buttonCalcForEmail'>
+                    <button type='button' data-service='Transferência de Imóveis' class='buttonCalcImovel buttonCalcForEmail'>
                         <span>Calcular</span>
                     </button>
                 </form>

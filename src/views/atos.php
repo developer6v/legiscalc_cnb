@@ -41,7 +41,7 @@ function calculadoraAtos() {
                         ' data-issqn="' . $service['ISSQN'] . '"' .
                         ' data-total="' . $service['Total'] . '">';
                     $output .= " </div> 
-                    <button data-service='${nameService}' class='buttonCalcAtos buttonCalcForEmail'>
+                    <button type='button' data-service='${nameService}' class='buttonCalcAtos buttonCalcForEmail'>
                         <span>Calcular</span>
                     </button>
                 </form>

@@ -1,5 +1,5 @@
 jQuery(document).ready(function($){
-    $('.buttonCalcHome').click(async function(event){
+    $(document).on('click', '.buttonCalcHome', async function(event) {
         event.preventDefault();
         $('#divResultCalc').hide();
         $('.overlay').hide();
