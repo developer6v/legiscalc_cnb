@@ -18,11 +18,7 @@ function resultadoCalculadora() {
                     <span class='titleResult'>FRJ</span>
                     <span class='answerResult' id='frj'>R$ 0,00</span>
                 </div>
-                <div class='tax-row'>
-                    <span class='titleResult'>ISSQN</span>
-                    <span class='answerResult' id='issqn'>R$ 0,00</span>
-                </div>
-                
+
                 <div class='tax-row total-row'>
                     <span class='titleResultTotal'>TOTAL ESTIMADO</span>
                     <span class='answerResultTotal' id='total'>R$ 0,00</span>
