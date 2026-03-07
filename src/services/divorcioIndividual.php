@@ -1,31 +1,27 @@
 <?php
 
 function divorcioIndividual ($valor) {
-    $emolumento = $frj = $issqn = $total = 'undefined';
+    $emolumento = $frj = $total = 'undefined';
   
-    if ($valor <= 97195.46) {
-        $emolumento = 601.77;
-        $frj = 136.78;
-        $issqn = 18.05;
-    } else if ($valor < 206798.84) {
-        $emolumento = 1221.22;
-        $frj = 277.58;
-        $issqn = 36.64;
+    if ($valor <= 93295.7) {
+        $emolumento = 577.63;
+        $frj = 131.29;
+    } else if ($valor < 198501.48) {
+        $emolumento = 1172.23;
+        $frj = 266.44;
     } else  {
-        $emolumento = 2407.13;
-        $frj = 547.14;
-        $issqn = 72.21;
+        $emolumento = 2310.55;
+        $frj = 525.18;
     }
 
-
-    $total = $emolumento + $frj + $issqn;
+    $total = $emolumento + $frj;
 
     $result = [
         'emolumento' => $emolumento,
         'frj' => $frj,
-        'issqn' => $issqn,
         'total' => $total
     ];
 
     return $result;    
 }
+?>
