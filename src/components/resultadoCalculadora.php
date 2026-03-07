@@ -50,7 +50,7 @@ function resultadoCalculadora() {
             $output .= "
             <div class='warningsDiv'>
                 <p><i class='fa-solid fa-circle-info'></i> <strong>Atenção:</strong> Esta simulação é apenas uma estimativa.</p>
-                <p>O valor final pode sofrer variações devido a detalhes específicos no momento da lavratura do ato.</p>
+                <p>* Ao valor apresentado, serão acrescidos ISSQN, ITBI (Imposto de Transmissão Inter Vivos) e ITCMD (Imposto de Transmissão Causa Mortis e Doação), que devem ser verificados junto ao cartório da sua região.</p>
                 <p id='divorcioArtigoP'></p>
             </div>
         </div>
