@@ -244,7 +244,7 @@
 
 .result-header h2 {
     margin: 0;
-    color: #3652AD;
+    color: #ed3124;
     font-size: 20px;
     font-weight: bold;
     display: flex;
@@ -295,21 +295,21 @@
 .tax-row.total-row {
     margin-top: 10px;
     padding: 15px;
-    background-color: #f4f6fc; /* Fundo azul bem claro */
+    background-color:  #eec8c5; 
     border-radius: 8px;
-    border-left: 5px solid #3652AD;
+    border-left: 5px solid #ed3124;
 }
 
 .titleResultTotal {
     font-weight: 900;
     font-size: 18px;
-    color: #3652AD;
+    color: #ed3124;
 }
 
 .answerResultTotal {
     font-weight: 900;
     font-size: 22px;
-    color: #3652AD;
+    color: #ed3124;
 }
 
 /* Sessão do ITBI */
