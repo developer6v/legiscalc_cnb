@@ -8,7 +8,7 @@ jQuery(document).ready(function($){
 
         try {
             $.ajax({
-                url: baseUrl + 'src/controllers/sendEmail.php',
+                url: baseUrl + 'src/controllers/addToSheet.php',
                 type: 'POST',
                 dataType: 'json', 
                 data: {
