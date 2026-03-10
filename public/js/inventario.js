@@ -251,7 +251,7 @@ jQuery(document).ready(function($){
         $(this).val(formattedValue);
     });
 
-    $('#services_LegisCalc').change(function(event){
+    $(document).on('change', '#services_LegisCalc', function(event){
         if ($(this).val() == "Sem bens a partilhar") {
             $('.valuesDivorcioDiv').hide();
         } else {
