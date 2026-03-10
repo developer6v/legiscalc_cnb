@@ -1,13 +1,17 @@
 jQuery(document).ready(function($){
+    
+    // Adicionar novo campo de valor (isolado por container)
     $(document).on('click', '.addInputValueInventario', function(event){
         var singleValue =  $(this).parent().find('.valueDivorcio').val();
         if (singleValue == '') {
             alert('O valor não pode estar vazio!');
             return;
         }
-        // Esconde o elemento que foi clicado
-       $(this).hide();
-        var quantidadeValores = $('.valueDivorcioDiv').length + 1;
+        
+        $(this).hide();
+        let calcContainer = $(this).closest('.calcDiv');
+        var quantidadeValores = calcContainer.find('.valueDivorcioDiv').length + 1;
+        
         var divToAppend = "<div class='valueDivorcioDiv'>" +
             "<div class='lineValueDivorcio'>" +
                 "<label>Valor do bem " + quantidadeValores + "</label>" +
@@ -16,40 +20,49 @@ jQuery(document).ready(function($){
                 " <p class='addInputValueInventario'>Outro imóvel</p>" +
             "</div>" +
         "</div>";
-        $('.valuesDivorcioDiv').append(divToAppend);
+        
+        calcContainer.find('.valuesDivorcioDiv').append(divToAppend);
     });
 
-
-
+    // Botão Calcular (isolado por container)
     $(document).on('click', '.buttonCalcInventario', async function(event) {
         event.preventDefault(); 
+        
+        let calcContainer = $(this).closest('.calcDiv');
 
-        if ($('#userName_input').val() == '') {
+        if (calcContainer.find('#userName_input_inventario').val() == '') {
             alert('O campo "Nome" deve ser preenchido!');
             return;
         }
-        if ($('#whatsapp_input').val() == '') {
+        if (calcContainer.find('#whatsapp_input_inventario').val() == '') {
             alert('O campo "WhatsApp" deve ser preenchido!');
             return;
         } 
-        const type = $('#services_LegisCalc').val();
+        
+        const type = calcContainer.find('#services_inventarioCalc').val();
         var valorTotal = 0;
-        $('.valueDivorcio').each(function() {
+        
+        calcContainer.find('.valueDivorcio').each(function() {
             var valor = parseFloat($(this).val().replace(/\./g, '').replace(',', '.'));
             if (!isNaN(valor)) { 
                 valorTotal += valor;
             } 
         });
 
-        // 1. CORREÇÃO DA VARIÁVEL: Precisamos declarar o response aqui!
         let response; 
 
         if (type == 'De bens individualizados') {
-            response = await bensIndividualizados(valorTotal);
+            response = await bensIndividualizados(valorTotal, calcContainer);
         } else if (type == 'Em frações ideais idênticas') {
-            response = await fracoesIdenticas();
+            response = await fracoesIdenticas(calcContainer);
         } else if (type == 'Sem bens a partilhar') {
             response = await semBensAPartilhar();
+        }
+
+        if (!response) {
+            console.error("Erro: O tipo de partilha não foi reconhecido. Valor lido:", type);
+            alert("Houve um erro ao identificar a opção de cálculo.");
+            return;
         }
 
         var emolumento = response['emolumento'].toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
@@ -57,25 +70,17 @@ jQuery(document).ready(function($){
         var issqn = response['issqn'].toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
         var total = response['total'].toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ?? null;
 
-        // 2. CORREÇÃO DO CONFLITO DE IDs: 
-        // Vamos isolar a calculadora atual pegando a div "pai" (.calcDiv)
-        let calcContainer = $(this).closest('.calcDiv');
-
-        // Agora nós mudamos os valores APENAS dentro desta calculadora específica
         calcContainer.find('#emolumento').text("R$ " + emolumento);
         calcContainer.find('#frj').text("R$ " + frj);
         calcContainer.find('#issqn').text("R$ " + issqn);
         calcContainer.find('#total').text("R$ " + total);
         calcContainer.find('#divorcioArtigoP').text("§ 2º do art. 44 da Lei Complementar 755/2020.");
 
-        // E por fim, mostramos apenas a div de resultado e overlay DESTA calculadora
         calcContainer.find('#divResultCalc').css("display", "block").show();
         calcContainer.find('.overlay').show();
         
         $(document).trigger("calculationCompleted");        
     });
-
-
 
     async function semBensAPartilhar() {
         let response = await $.ajax({
@@ -88,25 +93,16 @@ jQuery(document).ready(function($){
             }
         });
         
-        
-        let emolumento = response.emolumento;
-        let frj = response.frj;
-        let issqn = response.issqn;
-        let total = response.total;
-
-    
         return {
-            emolumento: emolumento,
-            frj: frj,
-            issqn: issqn,
-            total: total
+            emolumento: response.emolumento,
+            frj: response.frj,
+            issqn: response.issqn,
+            total: response.total
         };
     } 
     
-
-
-    async function bensIndividualizados(valorTotal) {
-
+    // Passamos o calcContainer para ele ler apenas os inputs certos
+    async function bensIndividualizados(valorTotal, calcContainer) {
         let emolumento = 0;
         let frj = 0;
         let issqn = 0;
@@ -131,7 +127,7 @@ jQuery(document).ready(function($){
             total = response.total;
 
         } else {
-            const requests = $('.valueDivorcio').map(function() {
+            const requests = calcContainer.find('.valueDivorcio').map(function() {
                 const inputValue = parseFloat($(this).val().replace(/\./g, '').replace(',', '.'));
                 valueSoma += inputValue;
                 if (inputValue != 0) {
@@ -153,7 +149,6 @@ jQuery(document).ready(function($){
                 }
             }).get();
             await Promise.all(requests);
-
         }
 
         return {
@@ -164,24 +159,21 @@ jQuery(document).ready(function($){
         };
     }
 
-
-
-    async function fracoesIdenticas() {
+    // Passamos o calcContainer para ele ler apenas os inputs certos
+    async function fracoesIdenticas(calcContainer) {
         let emolumento = 0;
         let frj = 0;
         let issqn = 0;
         let total = 0;
         let valorTotal = 0;
     
-        const valorInputs = $('.valueDivorcio').map(function() {
+        const valorInputs = calcContainer.find('.valueDivorcio').map(function() {
             return parseFloat($(this).val().replace(/\./g, '').replace(',', '.'));
         }).get();
     
         for (let i = 0; i < valorInputs.length; i++) {
             valorTotal += valorInputs[i] / 2;
         }
-    
-        console.log('valor total: ' + valorTotal);
     
         if (valorTotal <= 503267.98) {
             let response = await $.ajax({
@@ -231,11 +223,8 @@ jQuery(document).ready(function($){
             total: total
         };
     }
-    
 
-
-
-    // mascara inputs values
+    // Mascara inputs values
     $(document).on('input', '.valueDivorcio', function(event) {
         let value = $(this).val().replace(/[^\d,]/g, ''); 
         value = value.replace(/,/g, '');
@@ -246,7 +235,6 @@ jQuery(document).ready(function($){
         if (isNaN(intValue)) {
           intValue = 0;
         }
-        // Formata os decimais
         let formattedValue = (intValue / 100).toFixed(2);
         formattedValue = formattedValue.replace('.', ',');
         let parts = formattedValue.split(',');
@@ -255,11 +243,13 @@ jQuery(document).ready(function($){
         $(this).val(formattedValue);
     });
 
-    $(document).on('change', '#services_LegisCalc', function(event){
+    // Evento de mudança no Select (isolado por container e com novo ID)
+    $(document).on('change', '#services_inventarioCalc', function(event){
+        let calcContainer = $(this).closest('.calcDiv');
         if ($(this).val() == "Sem bens a partilhar") {
-            $('.valuesDivorcioDiv').hide();
+            calcContainer.find('.valuesDivorcioDiv').hide();
         } else {
-            $('.valuesDivorcioDiv').show();
+            calcContainer.find('.valuesDivorcioDiv').show();
         }
     });
 });

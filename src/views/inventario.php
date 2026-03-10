@@ -15,23 +15,23 @@ function calculadoraInventario() {
                     <div class = 'userInfo_legisCalc'>  
                         <div class = 'userNameDivDivorcio'>
                             <i class='fa fa-user'></i>
-                            <input type='text' id='userName_input' class='inputFormLegisCalc' placeholder='Seu Nome'/>
+                            <input type='text' id='userName_input_inventario' class='inputFormLegisCalc' placeholder='Seu Nome'/>
                         </div>
                         <div class = 'userWhatsappDivorcio'>
                             <i class='fa-brands fa-whatsapp'></i>
-                            <input type='text' id='whatsapp_input' class='inputFormLegisCalc' placeholder='Seu Telefone'/>
+                            <input type='text' id='whatsapp_input_inventario' class='inputFormLegisCalc' placeholder='Seu Telefone'/>
                         </div>
                     </div>
 
                     <div class='servicesInfo_legisCalc'>
                         <label class='service_legisCalc'><i class='fa-solid fa-align-justify'></i> Partilha</label>
-                        <select id='services_LegisCalc' class='inputFormLegisCalc' name='services_LegisCalc'>
+                        <select id='services_inventarioCalc' class='inputFormLegisCalc' name='services_LegisCalc'>
                             <option value='Sem bens a partilhar'>Sem bens a partilhar</option>
                             <option value='De bens individualizados'>De bens individualizados</option>
                             <option value='Em frações ideais idênticas'>Em frações ideais idênticas</option>
                         </select>
                     </div>
-                    <div class = 'valuesDivorcioDiv'>
+                    <div class = 'valuesDivorcioDiv' style='display: none;'>
                         <div class = 'valueDivorcioDiv'>
                             <P>Valor dos bens da herança</P>
                             <div class='lineValueDivorcio'>
