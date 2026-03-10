@@ -24,7 +24,6 @@ jQuery(document).ready(function($){
     $(document).on('click', '.buttonCalcInventario', async function(event) {
         event.preventDefault(); 
 
-
         if ($('#userName_input').val() == '') {
             alert('O campo "Nome" deve ser preenchido!');
             return;
@@ -42,7 +41,8 @@ jQuery(document).ready(function($){
             } 
         });
 
-
+        // 1. CORREÇÃO DA VARIÁVEL: Precisamos declarar o response aqui!
+        let response; 
 
         if (type == 'De bens individualizados') {
             response = await bensIndividualizados(valorTotal);
@@ -52,23 +52,27 @@ jQuery(document).ready(function($){
             response = await semBensAPartilhar();
         }
 
-
         var emolumento = response['emolumento'].toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
         var frj = response['frj'].toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
         var issqn = response['issqn'].toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
         var total = response['total'].toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ?? null;
 
-        // mostrar os valores na tela
-        $('#emolumento').text("R$ " + emolumento);
-        $('#frj').text("R$ " + frj);
-        $('#issqn').text("R$ " + issqn);
-        $('#total').text("R$ " + total);
-        $('#divorcioArtigoP').text("§ 2º do art. 44 da Lei Complementar 755/2020.");
+        // 2. CORREÇÃO DO CONFLITO DE IDs: 
+        // Vamos isolar a calculadora atual pegando a div "pai" (.calcDiv)
+        let calcContainer = $(this).closest('.calcDiv');
 
-        $('#divResultCalc').css("display", "block").show();
-        $('.overlay').show();
+        // Agora nós mudamos os valores APENAS dentro desta calculadora específica
+        calcContainer.find('#emolumento').text("R$ " + emolumento);
+        calcContainer.find('#frj').text("R$ " + frj);
+        calcContainer.find('#issqn').text("R$ " + issqn);
+        calcContainer.find('#total').text("R$ " + total);
+        calcContainer.find('#divorcioArtigoP').text("§ 2º do art. 44 da Lei Complementar 755/2020.");
+
+        // E por fim, mostramos apenas a div de resultado e overlay DESTA calculadora
+        calcContainer.find('#divResultCalc').css("display", "block").show();
+        calcContainer.find('.overlay').show();
+        
         $(document).trigger("calculationCompleted");        
-
     });
 
 
