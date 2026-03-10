@@ -36,7 +36,6 @@ function calculadoraAtos($tipoSelecionado = 'apostilamento-de-haia') {
                     <div id='services_LegisCalc'";
                         $output .= ' data-emolumento="' . $service['Emolumento'] . '"' .
                         ' data-frj="' . $service['FRJ'] . '"' .
-                        ' data-issqn="' . $service['ISSQN'] . '"' .
                         ' data-total="' . $service['Total'] . '">';
                     $output .= " </div> 
                     <button type='button' data-service='${nameService}' class='buttonCalcAtos buttonCalcForEmail'>

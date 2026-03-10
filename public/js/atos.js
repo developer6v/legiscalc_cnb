@@ -15,14 +15,13 @@ jQuery(document).ready(function($){
 
         var emolumentoValue = $('#services_LegisCalc').data('emolumento').toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
         var frjValue = $('#services_LegisCalc').data('frj').toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
-        var issqnValue = $('#services_LegisCalc').data('issqn').toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
         var totalValue = $('#services_LegisCalc').data('total').toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
 
         
         $('#emolumento').text("R$ " + emolumentoValue);
         $('#frj').text("R$ " + frjValue);
-        $('#issqn').text("R$ " + issqnValue);
         $('#total').text("R$ " + totalValue);
+        
         $('#divResultCalc').css("display", "block").show();
         $('.overlay').show();
         $(document).trigger("calculationCompleted");        

@@ -16,12 +16,10 @@ jQuery(document).ready(function($){
 
         var emolumentoValue = valuesResult['emolumento'].toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
         var frjValue = valuesResult['frj'].toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
-        var issqnValue = valuesResult['issqn'].toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
         var totalValue = valuesResult['total'].toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })  ?? null;
         
         $('#emolumento').text("R$ " + emolumentoValue);
         $('#frj').text("R$ " + frjValue);
-        $('#issqn').text("R$ " + issqnValue);
         $('#total').text("R$ " + totalValue);
         $('#divResultCalc').css("display", "block").show();
         $('.overlay').show();
@@ -46,7 +44,6 @@ jQuery(document).ready(function($){
             return {
                 emolumento: response.emolumento,
                 frj: response.frj,
-                issqn: response.issqn,
                 total: response.total,
                 value: value
             };

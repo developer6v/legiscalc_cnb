@@ -47,7 +47,6 @@ function calculadoraAtosSelect($tipoSelecionado = 'procuracao') {
                                 $output .= '<option value="' . $serviceName . '"' .
                                     ' data-emolumento="' . $service['Emolumento'] . '"' .
                                     ' data-frj="' . $service['FRJ'] . '"' .
-                                    ' data-issqn="' . $service['ISSQN'] . '"' .
                                     ' data-total="' . $service['Total'] . '">' .
                                     $serviceName .
                                     '</option>';

@@ -31,11 +31,9 @@ jQuery(document).ready(function($){
         }
         var emolumentoValue = valuesResult['emolumento'];
         var frjValue = valuesResult['frj'];
-        var issqnValue = valuesResult['issqn'];
         var totalValue = valuesResult['total'] ?? null;
         $('#emolumento').text("R$ " + emolumentoValue.toFixed(2).replace('.', ','));
         $('#frj').text("R$ " + frjValue.toFixed(2).replace('.', ','));
-        $('#issqn').text("R$ " + issqnValue.toFixed(2).replace('.', ','));
         $('#total').text("R$ " + totalValue.toFixed(2).replace('.', ','));
         $('#divResultCalc').css("display", "block").show();
         $('.overlay').show();
@@ -73,7 +71,6 @@ jQuery(document).ready(function($){
             return {
                 emolumento: response.emolumento,
                 frj: response.frj,
-                issqn: response.issqn,
                 total: response.total,
                 value: value
             };
@@ -87,12 +84,11 @@ jQuery(document).ready(function($){
     function taxesCalculatorWithoutValue () {
         var emolumentoValue = $('#services_LegisCalc').find(':selected').data('emolumento');
         var frjValue = $('#services_LegisCalc').find(':selected').data('frj');
-        var issqnValue = $('#services_LegisCalc').find(':selected').data('issqn');
+        var Value = $('#services_LegisCalc').find(':selected').data('');
         var totalValue = $('#services_LegisCalc').find(':selected').data('total');
         var resultValues = {
             emolumento : emolumentoValue,  
             frj : frjValue,    
-            issqn : issqnValue,    
             total : totalValue,      
         }
         return resultValues;

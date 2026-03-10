@@ -67,12 +67,10 @@ jQuery(document).ready(function($){
 
         var emolumento = response['emolumento'].toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
         var frj = response['frj'].toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
-        var issqn = response['issqn'].toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
         var total = response['total'].toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ?? null;
 
         calcContainer.find('#emolumento').text("R$ " + emolumento);
         calcContainer.find('#frj').text("R$ " + frj);
-        calcContainer.find('#issqn').text("R$ " + issqn);
         calcContainer.find('#total').text("R$ " + total);
         calcContainer.find('#divorcioArtigoP').text("§ 2º do art. 44 da Lei Complementar 755/2020.");
 
@@ -96,7 +94,6 @@ jQuery(document).ready(function($){
         return {
             emolumento: response.emolumento,
             frj: response.frj,
-            issqn: response.issqn,
             total: response.total
         };
     } 
@@ -105,7 +102,6 @@ jQuery(document).ready(function($){
     async function bensIndividualizados(valorTotal, calcContainer) {
         let emolumento = 0;
         let frj = 0;
-        let issqn = 0;
         let total = 0;
         var valueSoma = 0;
 
@@ -123,7 +119,6 @@ jQuery(document).ready(function($){
            
             emolumento = response.emolumento;
             frj = response.frj;
-            issqn = response.issqn;
             total = response.total;
 
         } else {
@@ -143,7 +138,6 @@ jQuery(document).ready(function($){
                     }).then(response => {
                         emolumento += response.emolumento;
                         frj += response.frj;
-                        issqn += response.issqn;
                         total += response.total;
                     });
                 }
@@ -154,7 +148,6 @@ jQuery(document).ready(function($){
         return {
             emolumento: emolumento,
             frj: frj,
-            issqn: issqn,
             total: total
         };
     }
@@ -163,7 +156,6 @@ jQuery(document).ready(function($){
     async function fracoesIdenticas(calcContainer) {
         let emolumento = 0;
         let frj = 0;
-        let issqn = 0;
         let total = 0;
         let valorTotal = 0;
     
@@ -189,7 +181,6 @@ jQuery(document).ready(function($){
     
             emolumento = response.emolumento;
             frj = response.frj;
-            issqn = response.issqn;
             total = response.total;
         } else {
             const requests = valorInputs.map(inputValue => {
@@ -207,7 +198,6 @@ jQuery(document).ready(function($){
                     }).then(response => {
                         emolumento += response.emolumento;
                         frj += response.frj;
-                        issqn += response.issqn;
                         total += response.total;
                     });
                 }
@@ -219,7 +209,6 @@ jQuery(document).ready(function($){
         return {
             emolumento: emolumento,
             frj: frj,
-            issqn: issqn,
             total: total
         };
     }

@@ -65,7 +65,6 @@ jQuery(document).ready(function($){
         } 
         let emolumento = 0;
         let frj = 0;
-        let issqn = 0;
         let total = 0;
         var valueSoma = 0;
     
@@ -85,7 +84,6 @@ jQuery(document).ready(function($){
                 }).then(response => {
                     emolumento += response.emolumento;
                     frj += response.frj;
-                    issqn += response.issqn;
                     total += response.total;
                 });
             }
@@ -100,7 +98,6 @@ jQuery(document).ready(function($){
 
             $('#emolumento').text("R$ " + emolumento.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) );
             $('#frj').text("R$ " + frj.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) );
-            $('#issqn').text("R$ " + issqn.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) );
             $('#total').text("R$ " + total.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) );
             $('#divResultCalc').css("display", "block").show();
             $('.overlay').show();
