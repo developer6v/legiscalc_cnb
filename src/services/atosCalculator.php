@@ -4,6 +4,9 @@ function atosCalculator() {
     $services = [
         "apostilamento-de-haia" => [
             "Name" => 'Apostila de Haia',
+           // "Emolumento" => 52.93,
+          //  "FRJ" => 12.03,
+         //   "Total" => 52.93 + 12.03,
             "Emolumento" => 55.14,
             "FRJ" => 12.53,
             "Total" => 55.14 + 12.53,
